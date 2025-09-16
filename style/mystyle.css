@@ -1,0 +1,197 @@
+:root{
+  --background-color: #f4f8f4; 
+  --surface-color: #e6efe9; 
+  --form-color: #ffffff; 
+  --nav-title: #000000; 
+  --text-primary: #2f4f2f; 
+  --text-primary-hover: #1b3a1b; 
+  --footer-text: #888888; 
+  --btn-primary: #1b3a1b; 
+  --btn-primary-hover: #144115; 
+  --btn-secondary: #2f4f2f; 
+  --btn-secondary-hover: #1b3a1b; 
+  --btn-hover-text: #d4f0d4; 
+  --btn-danger: #7a1b1b; 
+  --btn-danger-hover: #4c1111; 
+  --th-bg: #2f4f2f; 
+  --th-text: #ffffff; 
+  --img-border: #9caf88; 
+  --error-border: #ff0000; 
+}
+
+  .dark-mode{ 
+    --background-color: #121212; 
+    --surface-color: #161f19; 
+    --form-color: #2a2a2a; 
+    --nav-title: #ffffff; 
+    --nav-text-active: #203327; 
+    --text-primary: #e6efe9; 
+    --text-primary-hover: #b0d8b0; 
+    --footer-text: #aaaaaa; 
+    --btn-primary: #2f6f2f; 
+    --btn-primary-hover: #e6fbe6; 
+    --btn-secondary: #444444; 
+    --btn-secondary-hover: #2f6f2f; 
+    --btn-hover-text: #e6fbe6; 
+    --btn-danger: #a33a3a; 
+    --btn-danger-hover: #c74c4c; 
+    --th-bg: #333333; 
+    --th-text: #e6efe9; 
+    --img-border: #6b8e62; 
+    --error-border: #ff6666; 
+  
+  } /* General Styles */ 
+
+  body { 
+    font-family: arial; 
+    background-color: var(--background-color) !important; 
+    color: var(--text-primary); 
+    margin: 0; padding: 0; 
+  } 
+  
+  p, li, span, h1, h2, h3 { 
+    color: var(--text-primary); 
+  } 
+  
+  /* Navbar */ 
+
+  .navbar-custom {
+  background-color: var(--surface-color);
+  }
+  
+  .navbar-brand { 
+    font-family: 'Poppins', sans-serif; 
+    color: var(--nav-title); 
+    font-weight: bold; 
+  } 
+  
+  .navbar-nav .nav-link { 
+    color: var(--text-primary); 
+  } 
+  
+  .navbar-nav .nav-link.active { 
+    color: var(--nav-text-active); 
+  } 
+  
+  /* Buttons */ 
+  .btn-register { 
+    background-color: var(--btn-primary) !important; 
+    color: #ffffff !important; 
+    border: none; 
+  } 
+  
+  .btn-register:hover, .btn-register:focus { 
+    background-color: var(--btn-primary-hover) !important; 
+    color: #d4f0d4 !important; 
+  } 
+  
+  .btn-clear { 
+    background-color: var(--btn-secondary) !important; 
+    color: #e0e0e0 !important; 
+    border: none; 
+  } 
+  
+  .btn-clear:hover, .btn-clear:focus { 
+    background-color: var(--btn-secondary-hover) !important; 
+    color: #d4f0d4 !important; 
+  } 
+  
+  .btn-delete { 
+    background-color: var(--btn-danger) !important; 
+    color: #fff !important; 
+    border: none; 
+  } 
+  
+  .btn-delete:hover, .btn-delete:focus { 
+    background-color: var(--btn-danger-hover) !important; 
+    color: #f9caca; 
+  } 
+  
+  /* Main container */ 
+  
+  main { 
+    background-color: var(--surface-color); 
+    padding: 20px; border-radius: 10px; 
+  } 
+
+    label { 
+      color: var(--text-primary); 
+    } 
+    
+    /* Table header */ 
+    
+    table thead th { 
+      background-color: var(--th-bg); 
+      color: var(--th-text); 
+    } 
+    
+    /* Headings */ 
+    h1, h2, h3 { 
+      font-family: 'Poppins', sans-serif; 
+    } 
+    
+    /*Image*/ 
+    img { 
+      max-width: 100%; 
+      height: auto; 
+      border: 3px solid var(--img-border); 
+      border-radius: 10px; 
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+    } 
+    
+    /* Services */ 
+    .is-invalid { 
+      border: 2px solid var(--error-border) !important; 
+    } 
+    
+    /* Footer */ 
+    footer { 
+      font-size: 0.9rem; 
+      color: var(--footer-text); 
+      margin-top: 3rem; 
+    } 
+
+  /* Mobile Optimization */ 
+@media (max-width: 576px) 
+{ body { font-size: 16px; } }
+
+/* Dark/Light Mode Override */
+
+.dark-mode body,
+.dark-mode p,
+.dark-mode li,
+.dark-mode span,
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode a,
+.dark-mode blockquote,
+.dark-mode footer {
+  color: var(--text-primary) !important;
+}
+
+body.dark-mode .navbar-nav .nav-link.active {
+  color: var(--text-primary-hover) !important;
+}
+
+body.dark-mode #petCount,
+body.dark-mode #averageAge {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode table styling */
+body.dark-mode .table,
+body.dark-mode .table th,
+body.dark-mode .table td {
+  background-color: var(--surface-color) !important;
+  color: var(--text-primary) !important;
+  border-color: #444 !important;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #1e1e1e !important;
+}
+
+body.dark-mode .table-hover > tbody > tr:hover {
+  background-color: #2a2a2a !important;
+}

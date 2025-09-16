@@ -6,11 +6,12 @@
     <title>TFPS About Us</title>
     <link rel="stylesheet" href="./style/mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
   <!-- Navbar -->
-  <header class="bg-light shadow-sm mb-4">
-    <nav class="navbar navbar-expand-lg container">
+  <header class="shadow-sm mb-4">
+    <nav class="navbar navbar-custom navbar-expand-lg container-fluid">
       <a class="navbar-brand custom-black fs-3 fw-bold" href="index.html">The Fashion Pet</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,14 +24,18 @@
           <li class="nav-item"><a class="nav-link custom-darkgreen" href="services.html">Services</a></li>
           <li class="nav-item"><a class="nav-link custom-darkgreen" href="registration.html">Registration</a></li>
         </ul>
+        <!-- Dark/Light Mode Toggle -->
+        <button id="changeModeButton" class="btn btn-outline-secondary ms-3" title="Toggle Dark/Light Mode">
+          <i class="bi bi-moon"></i>
+        </button>
       </div>
     </nav>
   </header>
 
   <main>
       <!-- About Us Info -->
-<section id="aboutUs" class="bg-white p-4 rounded shadow-sm mb-4 text-center">
-  <h2 class="fw-semibold mb-3" style="color:#1b3a1b;">About Us</h2>
+<section id="aboutUs" class="p-4 rounded shadow-sm mb-4 text-center">
+  <h2 class="fw-semibold mb-3">About Us</h2>
   <img src="./images/IMG_0252.png" alt="Happy pets at The Fashion Pet" class="img-fluid rounded mb-3" style="width: 50%; height: auto;">
   <p>
     Welcome to <strong>The Fashion Pet</strong> — where tails wag and pets shine!
@@ -38,7 +43,7 @@
     that keep your furry friends happy, healthy, and stylish.
   </p>
   
-<h3 class="mt-5" style="color:#1b3a1b;">Our Mission</h3>
+<h3 class="mt-5">Our Mission</h3>
 <p>
   At <strong>The Fashion Pet</strong>, our mission is to provide exceptional grooming and wellness services that keep pets healthy, happy, and looking their best.  
   We are dedicated to creating a safe, loving, and stress-free environment for every pet who visits our salon.  
@@ -49,7 +54,7 @@
 
   <img src="./images/IMG_2564.png" alt="Happy pets at The Fashion Pet" class="img-fluid rounded m-5" style="width: auto; height: 350px;">
 
-  <h3 class="mt-2" style="color:#1b3a1b;">Our Values</h3>
+  <h3 class="mt-2">Our Values</h3>
   <ul class="list-unstyled">
     <li>🐾 Compassion - we treat every pet like family.</li>
     <li>💚 Quality Care - using only safe, vet-approved products.</li>
@@ -57,10 +62,10 @@
     <li>🌿 Eco-Friendly - sustainable practices for a better tomorrow.</li>
   </ul>
 
-  <h3 class="mt-4" style="color:#1b3a1b;">Payment Options</h3>
+  <h3 class="mt-4">Payment Options</h3>
   <p>We accept Cash, Credit Card, and Debit Card for your convenience.</p>
 
-  <h3 class="mt-5" style="color:#1b3a1b;">Happy Pets, Happy Owners</h3>
+  <h3 class="mt-5">Happy Pets, Happy Owners</h3>
 <blockquote class="blockquote mt-4 d-flex align-items-center justify-content-center flex-column flex-md-row">
   <img src="./images/1000002661.jpg" alt="Chloe" class="img-fluid rounded-circle mb-3" style="width:100px; height:100px; object-fit:cover;">
   <div>
@@ -69,7 +74,7 @@
   </div>
 </blockquote>
 
-  <p class="fw-bold mt-4" style="color:#2f4f2f;">
+  <p class="fw-bold mt-4">
     <a href="registration.html" class="btn btn-register">
     Book an appointment today and let us pamper your pet!
   </a>
@@ -77,15 +82,15 @@
 </section>
 
     <!-- Salon Info -->
-    <section id="salonInfo" class="bg-white p-4 rounded shadow-sm h-100 text-center">
-      <h2 class="fw-semibold mb-3" style="color:#1b3a1b;">Salon Info</h2>
-      <p id="salonName" style="color:#2f4f2f;"></p>
-      <p id="salonPhone" style="color:#2f4f2f;"></p>
-      <p id="salonAddress" style="color:#2f4f2f;"></p>
+    <section id="salonInfo" class="p-4 rounded shadow-sm h-100 text-center">
+      <h2 class="fw-semibold mb-3">Salon Info</h2>
+      <p id="salonName"></p>
+      <p id="salonPhone"></p>
+      <p id="salonAddress"></p>
     </section>
   </main>
 
-  <footer class="text-center text-muted my-4">
+  <footer class="text-center my-4">
     &copy; 2025 The Fashion Pet Salon. All rights reserved.
   </footer>
   
