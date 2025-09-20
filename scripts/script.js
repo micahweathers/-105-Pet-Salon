@@ -128,10 +128,10 @@ function populateServicesDropdown() {
   // Reset dropdown with static services first
   serviceDropdown.innerHTML = `
     <option value="">Select type</option>
-    <option value="Trim-Wash">Trim & Wash</option>
-    <option value="Nail-Clipping">Nail Clipping</option>
-    <option value="Spa-Day">Spa Day</option>
-    <option value="Daycare">Daycare</option>
+    <option value="Trim-Wash">Trim & Wash - $20.99</option>
+    <option value="Nail-Clipping">Nail Clipping - $9.99</option>
+    <option value="Spa-Day">Spa Day - $50.99</option>
+    <option value="Daycare">Daycare - $99.99</option>
   `;
 
   // Get services from localStorage
