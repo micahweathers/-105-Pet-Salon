@@ -1,32 +1,40 @@
 // Dark Mode Toggle
 $(document).ready(function () {
-  const $body = $("body");
-  const $toggle = $("#changeModeButton");
+    const $body = $("body");
+    const $toggle = $("#changeModeButton");
+    const $logo = $("#logo");
 
-  // Load saved preference
-  const darkMode = localStorage.getItem("darkMode") === "true";
-  if (darkMode) {
-    $body.addClass("dark-mode");
-    $toggle.html('<i class="bi bi-sun"></i>'); // Sun for dark mode
-  } else {
-    $toggle.html('<i class="bi bi-moon"></i>'); // Moon for light mode
-  }
+    // Load saved preference
+    const darkMode = localStorage.getItem("darkMode") === "true";
+    if (darkMode) {
+        $body.addClass("dark-mode");
+        $logo.attr("src", "./images/dark-mode-logo.png");
+        $toggle.html('<i class="bi bi-sun"></i>');
+    } else {
+        $logo.attr("src", "./images/light-mode-logo.png");
+    }
 
-  // Toggle on click
-  $toggle.click(function () {
-    $body.toggleClass("dark-mode");
+    // Toggle dark/light mode
+    $toggle.on("click", function () {
+        $body.toggleClass("dark-mode");
+        const isDark = $body.hasClass("dark-mode");
 
-    const isDark = $body.hasClass("dark-mode");
-    $toggle.html(isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>');
+        if (isDark) {
+            $logo.attr("src", "./images/dark-mode-logo.png");
+            $toggle.html('<i class="bi bi-sun"></i>');
+        } else {
+            $logo.attr("src", "./images/light-mode-logo.png");
+            $toggle.html('<i class="bi bi-moon"></i>');
+        }
 
-    // Save preference
-    localStorage.setItem("darkMode", isDark);
-  });
+        localStorage.setItem("darkMode", isDark);
+    });
 });
+
 
 // Salon Information Object
 const salon = {
-  Name: "The Fashion Pet",
+  Name: "Whisker Wonders",
   Phone: "555-1234",
   Address: {
     Street: "123 Paws Lane",
@@ -37,10 +45,10 @@ const salon = {
 
 // Initial Array Of Registered Pets
 let petsList = [
-  { Name: "Appa", Age: 2, Gender: "Male", Service: "Bath & Groom", Breed: "Ginger Cat", Type: "Cat", Payment: "Debit Card"},
-  { Name: "Zoro", Age: 6, Gender: "Male", Service: "Nail Trim", Breed: "Tuxedo Cat", Type: "Cat", Payment: "Cash"},
-  { Name: "Bugsy", Age: 6, Gender: "Male", Service: "Vaccination", Breed: "Tuxedo Cat", Type: "Cat", Payment: "Credit Card"},
-  { Name: "Captain Doodle", Age: 9, Gender: "Male", Service: "Spa Day", Breed: "Flat Faced", Type: "Cat", Payment: "Cash"}
+  { Name: "Appa", Age: 2, Gender: "Male", Service: "Bath & Groom", Breed: "Ginger Cat", Type: "Cat"},
+  { Name: "Zoro", Age: 6, Gender: "Male", Service: "Nail Trim", Breed: "Tuxedo Cat", Type: "Cat"},
+  { Name: "Bugsy", Age: 6, Gender: "Male", Service: "Vaccination", Breed: "Tuxedo Cat", Type: "Cat"},
+  { Name: "Captain Doodle", Age: 9, Gender: "Male", Service: "Spa Day", Breed: "Flat Faced", Type: "Cat"}
 ];
 
 // Pet Constructor Function
@@ -103,9 +111,8 @@ function displayTable() {
       <td>${pet.Breed}</td>
       <td>${pet.Service}</td>
       <td>${pet.Type}</td>
-      <td>${pet.Payment}</td>
       <td>
-        <button class="btn btn-sm btn-delete" onclick="deletePet(${index})">Delete</button>
+      <button class="btn btn-sm btn-delete" data-index="${index}">Delete</button>
       </td>
     `;
 
@@ -128,10 +135,10 @@ function populateServicesDropdown() {
   // Reset dropdown with static services first
   serviceDropdown.innerHTML = `
     <option value="">Select type</option>
-    <option value="Trim-Wash">Trim & Wash - $20.99</option>
-    <option value="Nail-Clipping">Nail Clipping - $9.99</option>
-    <option value="Spa-Day">Spa Day - $50.99</option>
-    <option value="Daycare">Daycare - $99.99</option>
+    <option value="Trim-Wash">Trim & Wash</option>
+    <option value="Nail-Clipping">Nail Clipping</option>
+    <option value="Spa-Day">Spa Day</option>
+    <option value="Daycare">Daycare</option>
   `;
 
   // Get services from localStorage
@@ -184,6 +191,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Reset The Form
       form.reset();
+
+      // Show modal confirmation
+    const registrationModalEl = document.getElementById("registrationModal");
+    const registrationModal = new bootstrap.Modal(registrationModalEl);
+    registrationModal.show();
     });
   }
 });

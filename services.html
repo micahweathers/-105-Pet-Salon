@@ -3,68 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TFPS Services</title>
+    <title>Service Registration</title>
     <link rel="stylesheet" href="./style/mystyle.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
 <body>
   <!-- Navbar -->
-  <header class="shadow-sm mb-4">
-    <nav class="navbar navbar-custom navbar-expand-lg container-fluid">
-      <a class="navbar-brand custom-black fs-3 fw-bold" href="index.html">The Fashion Pet</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link custom-darkgreen" href="index.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link custom-darkgreen active" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link custom-darkgreen" href="registration.html">Registration</a></li>
-        </ul>
-        <!-- Dark/Light Mode Toggle -->
-        <button id="changeModeButton" class="btn btn-outline-secondary ms-3" title="Toggle Dark/Light Mode">
-          <i class="bi bi-moon"></i>
+    <header class="shadow-sm mb-4">
+        <nav class="navbar navbar-custom navbar-expand-lg container-fluid">
+        <a class="navbar-brand fs-3 fw-bold" href="index.html">
+        <img class="nav-logo-img" id="logo" src="./images/light-mode-logo.png" alt="Whisker Wonders Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-    </nav>
-  </header>
 
-  <main>
-    <h1 class="text-center">Services Registration</h1>
-    <h2 class="text-center fs-5 fst-italic">Register your service blow.</h2>
-    <form id="servicesRegistrationForm" class="m-5 border p-4">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link custom-darkgreen" href="index.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link custom-darkgreen active" href="services.html">Services</a></li>
+            <li class="nav-item"><a class="nav-link custom-darkgreen" href="registration.html">Registration</a></li>
+            <li class="nav-item"><a class="nav-link custom-darkgreen" href="contact.html">Contact Us</a></li>
+            </ul>
+            <!-- Dark/Light Mode Toggle -->
+            <button id="changeModeButton" class="btn btn-outline-secondary ms-3" title="Toggle Dark/Light Mode">
+            <i class="bi bi-moon"></i>
+            </button>
+        </div>
+        </nav>
+    </header>
+
+ <main class="container my-5">
+
+  <!-- Customer Inquiry Section -->
+    <section class="container my-5">
+    <h2 class="text-center mb-4">Our Services & Pricing</h2>
+    <div class="table-responsive">
+      <table class="table table-hover align-middle text-center shadow-sm rounded overflow-hidden" style="background-color: var(--surface-color);">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Service</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="align-middle">
+            <td class="fw-semibold">Trim & Wash</td>
+            <td>Full grooming including bath, brushing, and haircut as needed.</td>
+            <td class="text-success fw-bold">$25.00</td>
+          </tr>
+          <tr>
+            <td class="fw-semibold">Nail Clipping</td>
+            <td>Trimming nails safely for dogs, cats, and small pets.</td>
+            <td class="text-success fw-bold">$10.00</td>
+          </tr>
+          <tr>
+            <td class="fw-semibold">Spa Day</td>
+            <td>Includes bath, nail clipping, ear cleaning, and optional styling.</td>
+            <td class="text-success fw-bold">$50.00</td>
+          </tr>
+          <tr>
+            <td class="fw-semibold">Daycare</td>
+            <td>Full-day care with playtime, feeding, and supervision.</td>
+            <td class="text-success fw-bold">$75.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Vendor/3rd Party Service Registration -->
+  <section class="p-4 rounded shadow-sm">
+    <h2 class="mb-4">Vendor Service Registration</h2>
+    <p class="fst-italic text-muted mb-3">
+      This form is for registered vendors or partners who want to offer their services through Whisker Wonders. All submissions are reviewed before being added.
+    </p>
+    <form id="servicesRegistrationForm" class="m-0">
       <div class="mb-3">
-    <label for="serviceName" class="form-label">Service Name</label>
-    <input type="text" class="form-control" id="serviceName" placeholder="Ex. Deluxe Spa Day" required>
+        <label for="serviceName" class="form-label">Service Name</label>
+        <input type="text" class="form-control" id="serviceName" placeholder="Ex. Deluxe Spa Day" required>
       </div>
 
       <div class="mb-3">
-    <label for="serviceDescription" class="form-label">Description</label>
-    <textarea class="form-control" id="serviceDescription" placeholder="Ex. Includes wash, dry, trim and accessories." required></textarea>
+        <label for="serviceDescription" class="form-label">Description</label>
+        <textarea class="form-control" id="serviceDescription" placeholder="Ex. Includes wash, dry, trim and accessories." required></textarea>
       </div>
 
       <div class="mb-3">
-    <label for="servicePrice" class="form-label">Price</label>
-    <input type="number" class="form-control" id="servicePrice" step="any" placeholder="10.99" required>
+        <label for="servicePrice" class="form-label">Price</label>
+        <input type="number" class="form-control" id="servicePrice" step="any" placeholder="10.99" required>
       </div>
-      
+
       <div class="d-flex justify-content-end">
-        <button type="submit" class="btn btn-register m-1">Register</button>
+        <button type="submit" class="btn btn-register m-1">Register Service</button>
         <button type="reset" class="btn btn-clear m-1">Reset</button>
       </div>
       <p id="confirmation"></p>
     </form>
-  </main>
+  </section>
 
-  <footer class="text-center my-4">
-    &copy; 2025 The Fashion Pet Salon. All rights reserved.
-  </footer>
+</main>
+
+
+  <!-- footer -->
+    <footer id="salonInfo" class="p-4 rounded shadow-sm h-100 text-center">
+      <h2 class="fw-semibold mb-3">Salon Info</h2>
+      <p id="salonName"></p>
+      <p id="salonPhone"></p>
+      <p id="salonAddress"></p>
+      <div class="pt-2">
+        <h3 class="fs-5 fw-semibold mb-2">Hours</h3>
+        <ul class="list-unstyled">
+            <li><strong>Mon - Fri:</strong> 9:00 AM - 6:00 PM</li>
+            <li><strong>Saturday:</strong> 10:00 AM - 4:00 PM</li>
+            <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+      
+      <p class="pt-3">&copy; 2025 Whisker Wonders. All rights reserved.</p>
+    </footer>
 
   <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="./scripts/script.js"></script>
   <script src="./scripts/services.js"></script>
 </body>
 </html>

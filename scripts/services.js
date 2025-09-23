@@ -1,29 +1,3 @@
-// Dark Mode Toggle
-$(document).ready(function () {
-  const $body = $("body");
-  const $toggle = $("#changeModeButton");
-
-  // Load saved preference
-  const darkMode = localStorage.getItem("darkMode") === "true";
-  if (darkMode) {
-    $body.addClass("dark-mode");
-    $toggle.html('<i class="bi bi-sun"></i>'); // Sun for dark mode
-  } else {
-    $toggle.html('<i class="bi bi-moon"></i>'); // Moon for light mode
-  }
-
-  // Toggle on click
-  $toggle.click(function () {
-    $body.toggleClass("dark-mode");
-
-    const isDark = $body.hasClass("dark-mode");
-    $toggle.html(isDark ? '<i class="bi bi-sun"></i>' : '<i class="bi bi-moon"></i>');
-
-    // Save preference
-    localStorage.setItem("darkMode", isDark);
-  });
-});
-
 // Constructor for a Service object
 function Service(name, description, price) {
   this.name = name;
@@ -89,8 +63,8 @@ $("#servicesRegistrationForm").on("submit", function (event) {
   // Clear invalid highlights after successful registration
   $("#serviceName, #serviceDescription, #servicePrice").removeClass("is-invalid");
 
-  // ✅ Add confirmation message
+  // Add confirmation message
   $("#confirmation")
-    .text(`✅ "${serviceName}" has been successfully registered.`)
+    .text(`"${serviceName}" has been successfully registered.`)
     .css({ "color": "green", "font-weight": "bold", "margin-top": "10px" });
 });

@@ -55,6 +55,13 @@
   
   /* Navbar */ 
 
+  .nav-logo-img{
+    height: 55px;
+    width: auto;
+    margin-left: 35%;
+    border: 5px;
+  }
+
   .navbar-custom {
   background-color: var(--surface-color);
   }
